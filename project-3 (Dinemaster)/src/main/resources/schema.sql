@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS RESTAURANT(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(250),
+    address VARCHAR(250),
+    cuisineType VARCHAR(250),
+    rating INT
+);
+
+CREATE TABLE IF NOT EXISTS CHEF(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    firstName VARCHAR(250),
+    lastName VARCHAR(250),
+    expertise VARCHAR(250),
+    experienceYears INT,
+    restaurantId INT,
+    FOREIGN KEY(restaurantId) REFERENCES RESTAURANT(id) ON DELETE CASCADE
+);
