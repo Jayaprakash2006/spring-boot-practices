@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS HOTEL(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(150),
+    location VARCHAR(150),
+    rating INT
+);
+
+CREATE TABLE IF NOT EXISTS ROOM(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    roomNumber VARCHAR(150),
+    type VARCHAR(150),
+    price DOUBLE,
+    hotelId INT,
+    FOREIGN KEY(hotelId) REFERENCES HOTEL(id)
+);
